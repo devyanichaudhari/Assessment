@@ -11,7 +11,8 @@ public class StringReverse {
 		String n = s.nextLine();
 		for(int i=n.length();i>0;--i)                 
 		{  
-		System.out.print(n.charAt(i-1));              
+			char a = n.charAt(i-1);
+			System.out.print(a);              
 		}  
 	}
 

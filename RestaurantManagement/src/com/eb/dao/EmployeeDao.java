@@ -58,9 +58,9 @@ public class EmployeeDao
 			String  name  = sc.next();
 			System.out.println("Enter the Employee Contact You want to Update:");
 			String contact = sc.next();
-			System.out.println("Enter the Employee Address You want to Update:");
-			int designation = sc.nextInt();
-			String sql1 = "update customer set Ename='"+name+"',Edesignation='"+designation+"', Econtact='"+contact+"' where cusid="+id;
+			System.out.println("Enter the Employee Designation You want to Update:");
+			String designation = sc.next();
+			String sql1 = "update employee set Ename='"+name+"',Edesignation='"+designation+"', Econtact='"+contact+"' where Eid="+id;
 			PreparedStatement ps = conn.prepareStatement(sql1);
 			ps.executeUpdate();
 			f = true;

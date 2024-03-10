@@ -2,6 +2,7 @@ package com.eb.dao;
 
 import java.sql.*;
 import com.eb.database.CP;
+import com.eb.pojo.Orders;
 public class OrderDao {
 
 	
@@ -27,7 +28,22 @@ public class OrderDao {
 		}
 	}
 */
-	
+	public static boolean insert(Orders o)
+	{
+		try
+		{
+		Connection conn = CP.createc();
+		String sql2 = "insert into Orders(totalprice) values(?) ";
+		PreparedStatement ps = conn.prepareStatement(sql2);
+		ps.setInt(1, o.getTotalbill());
+		ps.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return false;
+	}
 	public static boolean delete(int oid)
 	{
 		try

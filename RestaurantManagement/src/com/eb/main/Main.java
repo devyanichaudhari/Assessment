@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 import com.eb.dao.CustomerDao;
 import com.eb.dao.EmployeeDao;
+import com.eb.dao.MenuDao;
+import com.eb.dao.OrderDao;
 import com.eb.pojo.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Orders o = new Orders();
 		System.out.println("Enter Your Name:");
 		String name = sc.next();
 		System.out.println("Welcome to Restaurant Management Portal "+name);
@@ -47,6 +50,7 @@ public class Main {
 						String cus_add = sc.next();
 						Customer c = new Customer(cus_name,cus_con,cus_add);
 						boolean ans = CustomerDao.insert(c);
+						
 						System.out.println("Data Inserted Successfully");	
 					break;	
 					case 2:
@@ -94,21 +98,21 @@ public class Main {
 						System.out.println("Enter the Menu Quantity: ");
 						int menu_quantity = sc.nextInt();
 						Menu m = new Menu(menu_name,menu_price,menu_quantity);
-						//Method Call Pending
+						MenuDao.insert(m);
 						System.out.println("Data Inserted Successfully");
 					break;	
 					case 2:
-						//method call
+						MenuDao.update();
 						System.out.println("Data Updated Successfully");
 					break;
 					case 3:
 						System.out.println("Enter which ID you want to Delete");
 						int menu_id = sc.nextInt();
-						//.delete(id);method call
+						MenuDao.delete(menu_id);
 						System.out.println("Data Deleted Successfully");
 					break;
 					case 4:
-						//.display(); method call
+						MenuDao.display();
 					break;
 					case 5:
 						System.out.println("Bye Bye :)");

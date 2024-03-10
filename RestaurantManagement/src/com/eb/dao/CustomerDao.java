@@ -59,7 +59,7 @@ public class CustomerDao
 			System.out.println("Enter the Customer Contact You want to Update:");
 			String contact = sc.next();
 			System.out.println("Enter the Customer Address You want to Update:");
-			int address = sc.nextInt();
+			String address = sc.next();
 			String sql1 = "update customer set cusname='"+name+"',cuscontact='"+contact+"', cusaddress='"+address+"' where cusid="+id;
 			PreparedStatement ps = conn.prepareStatement(sql1);
 			ps.executeUpdate();

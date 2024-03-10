@@ -14,7 +14,7 @@ public class MenuDao
 		try
 		{
 			Connection conn = CP.createc();
-			String query = "insert into menu(menu_name,menu_price,menu_quantity) values(?,?,?)";
+			String query = "insert into menu(Mname,Price,mquant) values(?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setString(1, m.getMenuName());
 			ps.setInt(2, m.getPrice());

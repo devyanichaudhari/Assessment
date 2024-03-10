@@ -62,7 +62,7 @@ public class Main {
 					break;
 					case 5:
 						System.out.println("Bye Bye :)");
-						break;
+					break;
 					default:
 						System.out.println("You have Entered Wrong Choice");
 					}	
@@ -110,17 +110,15 @@ public class Main {
 					break;
 					case 5:
 						System.out.println("Bye Bye :)");
-						break;
+					break;
 					default:
 						System.out.println("You have Entered Wrong Choice");
 					}	
-			
 				}
 				while(choice1!=5);
 			break;	
 			case 3:
-				int choice2 =0;
-				choice2 = sc.nextInt();
+				int choice2 = 0;
 				do
 				{
 					System.out.println("Press 1 to Update Order Details.");
@@ -128,31 +126,30 @@ public class Main {
 					System.out.println("Press 3 to Display Order Details.");
 					System.out.println("Press 4 to Exit");
 					System.out.println("Please Enter your Choice:");
-					choice2 = sc.nextInt();
-					switch(choice2)
-					{
-					case 1:
-						//method call
-						System.out.println("Data Updated Successfully");
+				choice2 = sc.nextInt();
+				switch(choice2)
+				{
+				case 1:
+					//method call
+					System.out.println("Data Updated Successfully");
+				break;
+				case 2:
+					System.out.println("Enter which ID you want to Delete");
+					int order_id = sc.nextInt();
+					//.delete(id);method call
+					System.out.println("Data Deleted Successfully");
+				break;
+				case 3:
+					//.display(); method call
+				break;
+				case 4:
+					System.out.println("Bye Bye :)");
 					break;
-					case 2:
-						System.out.println("Enter which ID you want to Delete");
-						int order_id = sc.nextInt();
-						//.delete(id);method call
-						System.out.println("Data Deleted Successfully");
-					break;
-					case 3:
-						//.display(); method call
-					break;
-					case 4:
-						System.out.println("Bye Bye :)");
-						break;
-					default:
-						System.out.println("You have Entered Wrong Choice");
-					}	
-			
+				default:
+					System.out.println("You have Entered Wrong Choice");
 				}
-				while(choice2!=4);
+			}
+				while(choice2!=2);
 			break;
 			case 4:
 				int choice3 =0;

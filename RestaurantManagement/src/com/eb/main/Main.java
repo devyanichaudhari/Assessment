@@ -2,6 +2,8 @@ package com.eb.main;
 
 import java.util.Scanner;
 
+import com.eb.dao.CustomerDao;
+import com.eb.dao.EmployeeDao;
 import com.eb.pojo.*;
 
 public class Main {
@@ -44,21 +46,21 @@ public class Main {
 						System.out.println("Enter the Customer Address: ");
 						String cus_add = sc.next();
 						Customer c = new Customer(cus_name,cus_con,cus_add);
-						//Method Call Pending
+						boolean ans = CustomerDao.insert(c);
 						System.out.println("Data Inserted Successfully");	
 					break;	
 					case 2:
-						//method call
+						CustomerDao.update();
 						System.out.println("Data Updated Successfully");
 					break;
 					case 3:
 						System.out.println("Enter which ID you want to Delete");
 						int cus_id = sc.nextInt();
-						//.delete(id);method call
+						CustomerDao.delete(cus_id);
 						System.out.println("Data Deleted Successfully");
 					break;
 					case 4:
-						//.display(); method call
+						CustomerDao.display();
 					break;
 					case 5:
 						System.out.println("Bye Bye :)");
@@ -172,21 +174,21 @@ public class Main {
 						System.out.println("Enter the Employee Contact: ");
 						String employee_contact = sc.next();
 						Employee e = new Employee(employee_name,employee_design,employee_contact);
-						//Method Call Pending
+						boolean b = EmployeeDao.insert(e);
 						System.out.println("Data Inserted Successfully");	
 					break;	
 					case 2:
-						//method call
+						EmployeeDao.update();
 						System.out.println("Data Updated Successfully");
 					break;
 					case 3:
 						System.out.println("Enter which ID you want to Delete");
 						int E_id = sc.nextInt();
-						//.delete(id);method call
+						EmployeeDao.delete(E_id);
 						System.out.println("Data Deleted Successfully");
 					break;
 					case 4:
-						//.display(); method call
+						EmployeeDao.display();
 					break;
 					case 5:
 						System.out.println("Bye Bye :)");

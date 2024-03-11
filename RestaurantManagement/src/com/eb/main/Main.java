@@ -127,35 +127,41 @@ public class Main {
 				int choice2 = 0;
 				do
 				{
-					System.out.println("Press 1 to Update Order Details.");
-					System.out.println("Press 2 to Delete Order Detail.");
-					System.out.println("Press 3 to Display Order Details.");
-					System.out.println("Press 4 to Exit");
+					System.out.println("Press 1 to Add Order Details.");
+					System.out.println("Press 2 to Update Order Details.");
+					System.out.println("Press 3 to Delete Order Detail.");
+					System.out.println("Press 4 to Display Order Details.");
+					System.out.println("Press 5 to Exit");
 					System.out.println("Please Enter your Choice:");
 				choice2 = sc.nextInt();
 				switch(choice2)
 				{
 				case 1:
-					//method call
-					System.out.println("Data Updated Successfully");
+					OrderDao.totalBill();
+					OrderDao.insert();
+					System.out.println("Data Inserted Successfully");
 				break;
 				case 2:
-					System.out.println("Enter which ID you want to Delete");
-					int order_id = sc.nextInt();
-					//.delete(id);method call
-					System.out.println("Data Deleted Successfully");
+					OrderDao.update();
+					System.out.println("Data Updated Successfully");
 				break;
 				case 3:
-					//.display(); method call
+					System.out.println("Enter which ID you want to Delete");
+					int order_id = sc.nextInt();
+					OrderDao.delete(order_id);
+					System.out.println("Data Deleted Successfully");
 				break;
 				case 4:
+					OrderDao.display();
+				break;
+				case 5:
 					System.out.println("Bye Bye :)");
 					break;
 				default:
 					System.out.println("You have Entered Wrong Choice");
 				}
 			}
-				while(choice2!=2);
+				while(choice2!=5);
 			break;
 			case 4:
 				int choice3 =0;

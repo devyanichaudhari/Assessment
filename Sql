@@ -1,0 +1,33 @@
+create database restaurantmanagement;
+use restaurantmanagement;
+ create table customer(
+ cusid int primary key auto_increment,
+ cusname varchar(255),
+ cuscontact varchar(10),
+ cusaddress varchar(255)
+ );
+select * from customer;
+
+drop table menu;
+
+create table orders(oid int primary key auto_increment,totalprice int);
+select * from orders;
+
+Create table menu (
+mid int primary key auto_increment,
+Mname varchar(50),
+Price int,
+mquant int
+);
+
+select * from menu;
+
+create table employee (
+Eid int primary key auto_increment,
+Ename varchar(50),
+Edesignation varchar(60),
+Econtact varchar(60));
+
+select * from employee;
+
+drop table employee;

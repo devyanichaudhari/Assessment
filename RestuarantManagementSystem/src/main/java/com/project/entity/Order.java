@@ -4,7 +4,11 @@ import java.util.Set;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order 
 {
 	private int OrderId;

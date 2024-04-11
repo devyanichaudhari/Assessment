@@ -1,6 +1,7 @@
 package com.project.entity;
 
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
@@ -13,6 +14,7 @@ public class Menu
 	private String menuName;
 	private int price;
 	@ManyToOne
-	@JoinColumn(name="order_id",nullable=false)
+	@JoinColumns({@JoinColumn(name="Order_Id", referencedColumnName="OrderId"),
+	@JoinColumn(name="Total_Bill", referencedColumnName="totalbill")})
 	private Order order;
 }

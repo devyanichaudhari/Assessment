@@ -18,7 +18,7 @@ public class SpringBootOneToManyApplication {
 		ApplicationContext context = SpringApplication.run(SpringBootOneToManyApplication.class, args);
 		MobileRepository mobileRepo = context.getBean(MobileRepository.class);
 		AppRepository appRepo = context.getBean(AppRepository.class);
-		Mobile mob = new Mobile("Galaxy","Samsung");
+		Mobile mob = new Mobile("IPhone","Samsung");
 		mobileRepo.save(mob);
 		appRepo.save(new Apps("WhatsApp",25,mob));
 		appRepo.save(new Apps("Hike",25,mob));
@@ -33,11 +33,11 @@ public class SpringBootOneToManyApplication {
 		for(Mobile m: name) {
 		System.out.println(m);
 		}
-		//4. Getting parent table from child
+		/*//4. Getting parent table from child
 		List<Apps> list= appRepo.findMobileById(3);
 		for(Apps a: list) {
 		System.out.println(a.getMobile_Name());
-		}
+		}*/
 		
 	}
 

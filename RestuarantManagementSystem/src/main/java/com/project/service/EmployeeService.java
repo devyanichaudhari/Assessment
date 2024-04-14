@@ -4,15 +4,22 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.project.entity.Employee;
+import com.project.entity.Menu;
 import com.project.exception.RestuarantResource;
 import com.project.repository.EmployeeRepository;
-
-public class EmployeeService {
-
+@Service
+public interface EmployeeService {
+	Employee createEmployee(Employee e);
+	Employee updateEmployee(Employee e);
+	List<Employee> getAllEmployee();
+	Employee getEmployeeById(int id);
+	void deleteEmployee(int id);
+/*
 	@Autowired
-	EmployeeRepository repo;
+	private EmployeeRepository repo;
 		
 		public Employee createEmployee(Employee e) 
 		{
@@ -68,4 +75,5 @@ public class EmployeeService {
 				throw new RestuarantResource("Searching id is not available");
 			}	
 		}
+		*/
 }

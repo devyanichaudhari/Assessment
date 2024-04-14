@@ -1,17 +1,20 @@
 package com.project.service;
 
 import java.util.List;
-import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.project.entity.Menu;
-import com.project.exception.RestuarantResource;
-import com.project.repository.MenuRepository;
-
-public class MenuService {
-	@Autowired
-	MenuRepository repo;
+@Service
+public interface MenuService {
+	Menu createMenu(Menu m);
+	Menu updateMenu(Menu m) ;
+	List<Menu> getAllMenu();
+	Menu getMenuById(int id);
+	void deleteMenu(int id);
+	
+	/*@Autowired
+	private MenuRepository repo;
 		
 		public Menu createMenu(Menu m) 
 		{
@@ -65,6 +68,5 @@ public class MenuService {
 			{
 				throw new RestuarantResource("Searching id is not available");
 			}	
-		}
-
+		}*/
 }

@@ -1,19 +1,26 @@
 package com.project.service;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.project.entity.Employee;
 import com.project.entity.Order;
 import com.project.exception.RestuarantResource;
 import com.project.repository.OrderRepository;
-//It will handle Business Logic it calls method from Repository
 @Service
-public class OrderService {
-@Autowired
-OrderRepository repo;
+//It will handle Business Logic it calls method from Repository
+public interface OrderService {
+	Order createOrder(Order o);
+	Order updateOrder(Order o);
+	List<Order> getAllOrder();
+	Order getOrderById(int id) ;
+	void deleteOrder(int id);
+/*@Autowired
+private OrderRepository repo;
 
 	public Order createOrder(Order o) 
 	{
@@ -64,5 +71,5 @@ OrderRepository repo;
 		{
 			throw new RestuarantResource("Searching id is not available");
 		}	
-	}
+	}*/
 }

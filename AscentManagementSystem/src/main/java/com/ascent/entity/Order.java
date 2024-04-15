@@ -1,7 +1,5 @@
 package com.ascent.entity;
 
-import java.util.Set;
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,14 +11,24 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	@Column(name="name")
+	private String name;
+	@Column(name="price")
+	private int price;
 	@Column(name="quantity")
 	private int quantity;
 	@Column(name="total")
 	private int total;
-	@OneToMany(mappedBy="order",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	private Set<Menu> menu;
+	public Order(String name, int price, int quantity, int total) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+		this.total = total;
+	}
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", quantity=" + quantity + ", total=" + total + ", menu=" + menu + "]";
+		return "Order [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", total=" + total
+				+ "]";
 	}
 }

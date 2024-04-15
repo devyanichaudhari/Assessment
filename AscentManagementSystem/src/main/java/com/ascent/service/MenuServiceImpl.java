@@ -3,6 +3,7 @@ package com.ascent.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ascent.entity.Menu;
@@ -11,6 +12,7 @@ import com.ascent.repository.MenuRepository;
 
 @Service
 public class MenuServiceImpl implements MenuService{
+	@Autowired
 	MenuRepository menuRepo;
 
 	@Override

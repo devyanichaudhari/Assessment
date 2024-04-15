@@ -1,5 +1,7 @@
 package com.ascent.entity;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,14 +19,10 @@ public class Menu {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@Column(name="menu_Name")
+	@Column(name="menu_name")
 	private String menuName;
-	@Column(name="menu_Price")
+	@Column(name="menu_price")
 	private int price;
-	@ManyToOne()
-	@JoinColumns({@JoinColumn(name="Quantity",referencedColumnName="quantity"),
-			@JoinColumn(name="Total",referencedColumnName="total")})
-	private Order order;
 	@Override
 	public String toString() {
 		return "Menu [id=" + id + ", menuName=" + menuName + ", price=" + price + "]";

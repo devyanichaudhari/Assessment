@@ -13,6 +13,7 @@ import com.ascent.exception.RestuarantResource;
 public class OrderServiceImpl implements OrderService{
 	@Autowired
 	OrderRepository orderRepo;
+
 	@Override
 	public Order createOrder(Order o) {
 		
@@ -26,6 +27,8 @@ public class OrderServiceImpl implements OrderService{
 		{
 			Order updateOrder = order.get();
 			updateOrder.setId(o.getId());
+			updateOrder.setName(o.getName());
+			updateOrder.setPrice(o.getPrice());
 			updateOrder.setQuantity(o.getQuantity());
 			updateOrder.setTotal(o.getTotal());
 			orderRepo.save(updateOrder);
@@ -69,5 +72,4 @@ public class OrderServiceImpl implements OrderService{
 		}
 		
 	}
-
 }

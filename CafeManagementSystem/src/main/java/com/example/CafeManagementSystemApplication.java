@@ -1,12 +1,13 @@
-package com.ascent;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AscentManagementSystemApplication {
+public class CafeManagementSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AscentManagementSystemApplication.class, args);
+		SpringApplication.run(CafeManagementSystemApplication.class, args);
 	}
+
 }
